@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Registration Form</title>
+</head>
+<body>
+<div><p>Please complete this form to register:</p>
+
+<form action="handle_reg.php" method="post">
+
+	<p>Email Address: <input type="text" name="email" size="30"></p>
+	<p>Password: <input type="password" name="passowrd" size="20"></p>
+	<p>Confirm Password: <input type="password" name="confirm" size="20"></p>
+	<p>Year You Were Born: <input type="text" name="year" value="YYYY" size="4"></p>
+	
+	<p>Favorite Color: 
+	<select name="color">
+	<option value="">Pick One</option>
+	<option value="red">red</option>
+	<option value="yellow">yellow</option>
+	<option value="green">green</option>
+	<option value="blue">blue</option>
+	<option value="black">black</option>
+	<option value="orange">orange</option>
+	</select></p>
+	
+	<p><input type="checkbox" name="terms" value="yes"> 
+	I agree to the terms (whatever they may be).</p>
+	
+	<input type="submit" name="submit" value="Register">
+	
+</form>
+</div>
+</body>
+</html>
