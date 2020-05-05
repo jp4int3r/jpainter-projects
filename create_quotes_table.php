@@ -7,13 +7,16 @@
 <body>
 <?php //Script 12.3 - creat_talbe.php
 
-if ($dbc = @mysqli_connect('localhost', 'root', 'Jef2180287', 'myblog')) {
+if ($dbc = @mysqli_connect('localhost', 'root', 'Jef2180287', 'myquotes')) {
 
-	$query = 'CREATE TABLE entries (
-	id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	title VARCHAR(100) NOT NULL,
-	entry TEXT NOT NULL,
-	date_entered DATETIME NOT NULL )
+	$query = 'CREATE TABLE quotes (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	quote TEXT NOT NULL,
+	source varchar(100) NOT NULL,
+	favorite TINYINT(1) UNSIGNED NOT NULL,
+	date_entered TIMESTAMP NOT NULL
+		DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (id))
 	CHARACTER SET utf8 ';
 	
 	if (@mysqli_query($dbc, $query)) {

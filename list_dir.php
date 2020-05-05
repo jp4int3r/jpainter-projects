@@ -24,9 +24,7 @@ foreach ($contents as $item) {
        print "<li>$item</li>\n";
     }
 }
-
 print '</ul>'; // Close the list.
-
 // Create a table header:
 print '<hr><h2>Files</h2>
 <table cellpadding="2" cellspacing="2" align="left">
@@ -35,30 +33,22 @@ print '<hr><h2>Files</h2>
 <th>Size</th>
 <th>Last Modified</th>
 </tr>';
-
 // List the files:
 foreach ($contents as $item) {
     if ( (is_file($search_dir . '/' . $item)) AND (substr($item, 0, 1) != '.') ) {
-
     // Get the file size:
     $fs = filesize($search_dir . '/' . $item);
-
     // Get the file's modification date:
     $lm = date('F j, Y', filemtime($search_dir . '/' . $item));
-
 // Print the information:
     print "<tr>
     <td>$item</td>
     <td>$fs bytes</td>
     <td>$lm</td>
     </tr>\n";
-
     } // Close the IF.
-
   } // Close the FOREACH.
-
 print '</table>'; // Close the HTML table.
-
 ?>
 </body>
 </html>

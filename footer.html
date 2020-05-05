@@ -1,17 +1,14 @@
-<!-- END CHANGEABLE CONTENT. -->
-<?php //Script 13.4 footer.html
-
-if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php'))
-OR (isset($loggedin) && $loggedin) ) {
-
-	print '<hr><h3>Site Admin</h3><p><a href="add_quote.php">Add Quote</a> <->
-	<a href="view_quotes.php">View All Quotes</a> <->
-	<a href="logout.php">Logout</a></p>';
+<!-- END CHANGEABLE CONTENT -->
+	</main>
 	
-}
-
-?>
-	</div><!-- container -->
-	<div id="footer">Content &copy; 2020</div>
+	<footer container class="sitefooter">
+		<p>Design uses <a href="http://concisecss.com/">Concise CSS Framework</a></p>
+		<p class="float-right"><?php date_default_timezone_set('America/Phoenix');
+		print date('g:i a l F j');
+		?></p>
+	</footer>
+	
 </body>
-</html>
+</html><?php 
+ob_end_flush();
+?>
